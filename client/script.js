@@ -79,7 +79,7 @@ const handleSubmit = async (e) => {
   loader(messageDiv);
 
   // fetch data from server
-  const response = await fetch('https://codecouret.onrender.com',{
+  const response = await fetch('https://codecouret.onrender.com/',{
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
