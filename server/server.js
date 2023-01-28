@@ -17,11 +17,11 @@ app.use(express.json());
 
 app.get('/', async (req, res) => {
     res.status(200).send({
-        message: "Hello from code couret",
+        message: "Hello server code couret",
     })
 });
 
-app.post('/', async(req, res) => {
+app.post('/', async (req, res) => {
     try{
         const prompt = req.body.prompt;
         const response = await openai.createCompletion({

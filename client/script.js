@@ -79,7 +79,7 @@ const handleSubmit = async (e) => {
   loader(messageDiv);
 
   // fetch data from server
-  const response = await fetch('https://codecouret.onrender.com/',{
+  const response = await fetch('http://localhost:5000',{
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
@@ -89,14 +89,15 @@ const handleSubmit = async (e) => {
     })
   })
 
+
   clearInterval(loadInterval);
   messageDiv.innerHTML = '';
 
   if(response.ok){
     const data = await response.json();
-    const parseData = data.bot.trim();
+    const parsedData = data.bot.trim();
 
-    typetext(messageDiv, parseData);
+    typetext(messageDiv, parsedData);
   }else{
     const err =  await response.text();
     messageDiv.innerHTML = "Somthing went wrong";
