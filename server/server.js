@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.get('/', async (req, res) => {
     res.status(200).send({
-        message: "Hello server code couret",
+        message: "Hello server 3 code couret",
     })
 });
 
